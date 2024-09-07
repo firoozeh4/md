@@ -69,6 +69,13 @@ public class TestBase {
 	}
 
 	public void takeScreenshot(WebDriver driver)  {
+		
+		try {
+			Thread.sleep(15000);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
+		
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File sourceFile = ts.getScreenshotAs(OutputType.FILE);
 		String currentDirectory = System.getProperty("user.dir");
